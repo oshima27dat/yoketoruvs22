@@ -35,16 +35,20 @@ namespace yoketoruvs22
             this.leftlabel = new System.Windows.Forms.Label();
             this.scorelabel = new System.Windows.Forms.Label();
             this.startbutton = new System.Windows.Forms.Button();
+            this.gameoverlabel = new System.Windows.Forms.Label();
+            this.clearlabel = new System.Windows.Forms.Label();
+            this.titlebutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titlelabel
             // 
             this.titlelabel.AutoSize = true;
             this.titlelabel.BackColor = System.Drawing.SystemColors.Window;
-            this.titlelabel.Font = new System.Drawing.Font("Yu Gothic UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.titlelabel.Font = new System.Drawing.Font("Yu Gothic UI", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.titlelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.titlelabel.Location = new System.Drawing.Point(154, 75);
             this.titlelabel.Name = "titlelabel";
-            this.titlelabel.Size = new System.Drawing.Size(317, 72);
+            this.titlelabel.Size = new System.Drawing.Size(310, 71);
             this.titlelabel.TabIndex = 0;
             this.titlelabel.Text = "よけとる2022";
             // 
@@ -89,12 +93,43 @@ namespace yoketoruvs22
             // 
             // startbutton
             // 
-            this.startbutton.Location = new System.Drawing.Point(244, 273);
+            this.startbutton.Location = new System.Drawing.Point(218, 289);
             this.startbutton.Name = "startbutton";
-            this.startbutton.Size = new System.Drawing.Size(136, 68);
+            this.startbutton.Size = new System.Drawing.Size(177, 68);
             this.startbutton.TabIndex = 6;
             this.startbutton.Text = "START";
             this.startbutton.UseVisualStyleBackColor = true;
+            // 
+            // gameoverlabel
+            // 
+            this.gameoverlabel.AutoSize = true;
+            this.gameoverlabel.Font = new System.Drawing.Font("Yu Gothic UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gameoverlabel.ForeColor = System.Drawing.Color.Navy;
+            this.gameoverlabel.Location = new System.Drawing.Point(105, 170);
+            this.gameoverlabel.Name = "gameoverlabel";
+            this.gameoverlabel.Size = new System.Drawing.Size(415, 89);
+            this.gameoverlabel.TabIndex = 7;
+            this.gameoverlabel.Text = "GAME OVER";
+            // 
+            // clearlabel
+            // 
+            this.clearlabel.AutoSize = true;
+            this.clearlabel.Font = new System.Drawing.Font("Yu Gothic UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.clearlabel.ForeColor = System.Drawing.Color.Red;
+            this.clearlabel.Location = new System.Drawing.Point(175, 170);
+            this.clearlabel.Name = "clearlabel";
+            this.clearlabel.Size = new System.Drawing.Size(275, 89);
+            this.clearlabel.TabIndex = 8;
+            this.clearlabel.Text = "CLEAR!!";
+            // 
+            // titlebutton
+            // 
+            this.titlebutton.Location = new System.Drawing.Point(216, 289);
+            this.titlebutton.Name = "titlebutton";
+            this.titlebutton.Size = new System.Drawing.Size(179, 68);
+            this.titlebutton.TabIndex = 9;
+            this.titlebutton.Text = "タイトルへ";
+            this.titlebutton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -102,6 +137,9 @@ namespace yoketoruvs22
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.titlebutton);
+            this.Controls.Add(this.clearlabel);
+            this.Controls.Add(this.gameoverlabel);
             this.Controls.Add(this.startbutton);
             this.Controls.Add(this.scorelabel);
             this.Controls.Add(this.leftlabel);
@@ -110,7 +148,7 @@ namespace yoketoruvs22
             this.Controls.Add(this.titlelabel);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
-            this.Text = "★の数:20";
+            this.Text = "よけとる2022";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +162,9 @@ namespace yoketoruvs22
         private System.Windows.Forms.Label leftlabel;
         private System.Windows.Forms.Label scorelabel;
         private System.Windows.Forms.Button startbutton;
+        private System.Windows.Forms.Label gameoverlabel;
+        private System.Windows.Forms.Label clearlabel;
+        private System.Windows.Forms.Button titlebutton;
     }
 }
 
