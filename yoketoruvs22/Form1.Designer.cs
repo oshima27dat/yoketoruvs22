@@ -133,6 +133,7 @@ namespace yoketoruvs22
             this.titlebutton.TabIndex = 9;
             this.titlebutton.Text = "タイトルへ";
             this.titlebutton.UseVisualStyleBackColor = true;
+            this.titlebutton.Click += new System.EventHandler(this.titlebutton_Click);
             // 
             // timer1
             // 
