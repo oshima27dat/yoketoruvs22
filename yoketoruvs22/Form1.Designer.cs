@@ -83,7 +83,7 @@ namespace yoketoruvs22
             this.leftlabel.Name = "leftlabel";
             this.leftlabel.Size = new System.Drawing.Size(94, 28);
             this.leftlabel.TabIndex = 4;
-            this.leftlabel.Text = "★の数:20";
+            this.leftlabel.Text = "★の数:10";
             // 
             // scorelabel
             // 
@@ -144,10 +144,10 @@ namespace yoketoruvs22
             // TempLabel
             // 
             this.TempLabel.AutoSize = true;
-            this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TempLabel.Location = new System.Drawing.Point(73, 118);
             this.TempLabel.Name = "TempLabel";
-            this.TempLabel.Size = new System.Drawing.Size(32, 28);
+            this.TempLabel.Size = new System.Drawing.Size(30, 25);
             this.TempLabel.TabIndex = 10;
             this.TempLabel.Text = "★";
             this.TempLabel.Visible = false;
