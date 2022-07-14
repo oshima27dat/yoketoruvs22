@@ -29,6 +29,7 @@ namespace yoketoruvs22
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.titlelabel = new System.Windows.Forms.Label();
             this.copyrightlabel = new System.Windows.Forms.Label();
             this.timelabel = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@ namespace yoketoruvs22
             this.gameoverlabel = new System.Windows.Forms.Label();
             this.clearlabel = new System.Windows.Forms.Label();
             this.titlebutton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // titlelabel
@@ -99,6 +101,7 @@ namespace yoketoruvs22
             this.startbutton.TabIndex = 6;
             this.startbutton.Text = "START";
             this.startbutton.UseVisualStyleBackColor = true;
+            this.startbutton.Click += new System.EventHandler(this.startbutton_Click);
             // 
             // gameoverlabel
             // 
@@ -124,12 +127,17 @@ namespace yoketoruvs22
             // 
             // titlebutton
             // 
-            this.titlebutton.Location = new System.Drawing.Point(216, 289);
+            this.titlebutton.Location = new System.Drawing.Point(218, 289);
             this.titlebutton.Name = "titlebutton";
             this.titlebutton.Size = new System.Drawing.Size(179, 68);
             this.titlebutton.TabIndex = 9;
             this.titlebutton.Text = "タイトルへ";
             this.titlebutton.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -165,6 +173,7 @@ namespace yoketoruvs22
         private System.Windows.Forms.Label gameoverlabel;
         private System.Windows.Forms.Label clearlabel;
         private System.Windows.Forms.Button titlebutton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
