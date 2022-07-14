@@ -40,6 +40,7 @@ namespace yoketoruvs22
             this.clearlabel = new System.Windows.Forms.Label();
             this.titlebutton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TempLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titlelabel
@@ -140,12 +141,24 @@ namespace yoketoruvs22
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // TempLabel
+            // 
+            this.TempLabel.AutoSize = true;
+            this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TempLabel.Location = new System.Drawing.Point(73, 118);
+            this.TempLabel.Name = "TempLabel";
+            this.TempLabel.Size = new System.Drawing.Size(32, 28);
+            this.TempLabel.TabIndex = 10;
+            this.TempLabel.Text = "★";
+            this.TempLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.TempLabel);
             this.Controls.Add(this.titlebutton);
             this.Controls.Add(this.clearlabel);
             this.Controls.Add(this.gameoverlabel);
@@ -175,6 +188,7 @@ namespace yoketoruvs22
         private System.Windows.Forms.Label clearlabel;
         private System.Windows.Forms.Button titlebutton;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label TempLabel;
     }
 }
 

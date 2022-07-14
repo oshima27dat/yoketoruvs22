@@ -64,6 +64,7 @@ namespace yoketoruvs22
                 {
                     chrs[i].Text = ItemText;
                 }
+                chrs[i].Font = TempLabel.Font;
                 Controls.Add(chrs[i]);
             }
         }
