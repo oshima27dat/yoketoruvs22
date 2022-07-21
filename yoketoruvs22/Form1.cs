@@ -47,8 +47,9 @@ namespace yoketoruvs22
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);
 
-        int itemCount = ItemMax;
+        int itemCount = 0;
         int time = 0;
+        int hiscore = 0;
 
         public Form1()
         {
@@ -208,6 +209,11 @@ namespace yoketoruvs22
                     clearlabel.Visible = true;
                     titlebutton.Visible = true;
                     scorelabel.Visible = true;
+                    if(time>hiscore)
+                    {
+                        hiscore = time;
+                        scorelabel.Text = "HighScore" + hiscore;
+                    }
                     break;
             }
         }

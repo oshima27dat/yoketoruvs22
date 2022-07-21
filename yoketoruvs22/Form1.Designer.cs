@@ -90,9 +90,9 @@ namespace yoketoruvs22
             this.scorelabel.AutoSize = true;
             this.scorelabel.Location = new System.Drawing.Point(239, 185);
             this.scorelabel.Name = "scorelabel";
-            this.scorelabel.Size = new System.Drawing.Size(146, 28);
+            this.scorelabel.Size = new System.Drawing.Size(119, 28);
             this.scorelabel.TabIndex = 5;
-            this.scorelabel.Text = "High Score 100";
+            this.scorelabel.Text = "HighScore 0";
             // 
             // startbutton
             // 
@@ -120,7 +120,7 @@ namespace yoketoruvs22
             this.clearlabel.AutoSize = true;
             this.clearlabel.Font = new System.Drawing.Font("Yu Gothic UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.clearlabel.ForeColor = System.Drawing.Color.Red;
-            this.clearlabel.Location = new System.Drawing.Point(184, 175);
+            this.clearlabel.Location = new System.Drawing.Point(175, 75);
             this.clearlabel.Name = "clearlabel";
             this.clearlabel.Size = new System.Drawing.Size(275, 89);
             this.clearlabel.TabIndex = 8;
