@@ -19,7 +19,6 @@ namespace yoketoruvs22
         const int PlayerMax = 1;
         const int EnemyMax = 10;
         const int ItemMax = 10;
-        
         const int ChrMax = PlayerMax + EnemyMax + ItemMax;
         Label[] chrs = new Label[ChrMax];
         int[] vx = new int[ChrMax];
@@ -27,7 +26,7 @@ namespace yoketoruvs22
         const int PlayerIndex = 0;
         const int EnemyIndex = PlayerIndex + PlayerMax;
         const int ItemIndex = EnemyIndex + EnemyMax;
-
+        const int StartTime = 100;
         const string PlayerText = "(・ω・)";
         const string EnemyText = "◆";
         const string ItemText = "★";
@@ -47,6 +46,9 @@ namespace yoketoruvs22
 
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);
+
+        int itemCount = ItemMax;
+        int time = 0;
 
         public Form1()
         {
@@ -100,15 +102,19 @@ namespace yoketoruvs22
 
         void UpdateGame()
         {
+            time--;
+            timelabel.Text = $"Time{time:000}";
             Point mp = PointToClient(MousePosition);
-            int itemCount = ItemMax;
+            
 
-            //
+            //プレイヤーがマウスの中心になる
             chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
             chrs[PlayerIndex].Top = mp.Y - chrs[PlayerIndex].Height / 2;
 
             for (int i = EnemyIndex; i < ChrMax; i++)
             {
+                if (!chrs[i].Visible) continue;
+
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vx[i];
 
@@ -183,6 +189,9 @@ namespace yoketoruvs22
                         vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                         vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                     }
+
+                    itemCount = ItemMax;
+                    time = StartTime+1;
                     break;
 
 

@@ -109,7 +109,7 @@ namespace yoketoruvs22
             this.gameoverlabel.AutoSize = true;
             this.gameoverlabel.Font = new System.Drawing.Font("Yu Gothic UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gameoverlabel.ForeColor = System.Drawing.Color.Navy;
-            this.gameoverlabel.Location = new System.Drawing.Point(105, 170);
+            this.gameoverlabel.Location = new System.Drawing.Point(119, 175);
             this.gameoverlabel.Name = "gameoverlabel";
             this.gameoverlabel.Size = new System.Drawing.Size(415, 89);
             this.gameoverlabel.TabIndex = 7;
@@ -120,7 +120,7 @@ namespace yoketoruvs22
             this.clearlabel.AutoSize = true;
             this.clearlabel.Font = new System.Drawing.Font("Yu Gothic UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.clearlabel.ForeColor = System.Drawing.Color.Red;
-            this.clearlabel.Location = new System.Drawing.Point(175, 170);
+            this.clearlabel.Location = new System.Drawing.Point(184, 175);
             this.clearlabel.Name = "clearlabel";
             this.clearlabel.Size = new System.Drawing.Size(275, 89);
             this.clearlabel.TabIndex = 8;
