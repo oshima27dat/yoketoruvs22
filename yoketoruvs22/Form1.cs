@@ -93,6 +93,7 @@ namespace yoketoruvs22
             if(currentState == State.Game)
             {
                 UpdateGame();
+
             }
         }
 
@@ -104,28 +105,36 @@ namespace yoketoruvs22
             chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
             chrs[PlayerIndex].Top = mp.Y - chrs[PlayerIndex].Height / 2;
 
-                for(int i=EnemyIndex;i<ChrMax;i++)
+            for (int i = EnemyIndex; i < ChrMax; i++)
             {
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vx[i];
 
-                if(chrs[i].Left<0)
+                if (chrs[i].Left < 0)
                 {
                     vx[i] = Math.Abs(vx[i]);
                 }
-                if(chrs[i].Right>ClientSize.Width)
+                if (chrs[i].Right > ClientSize.Width)
                 {
                     vx[i] = -Math.Abs(vx[i]);
                 }
-                if(chrs[i].Top<0)
+                if (chrs[i].Top < 0)
                 {
                     vy[i] = Math.Abs(vy[i]);
                 }
-                if(chrs[i].Bottom>ClientSize.Height)
+                if (chrs[i].Bottom > ClientSize.Height)
                 {
                     vy[i] = -Math.Abs(vy[i]);
                 }
+                if ((chrs[i].Left <= mp.X)
+            && (chrs[i].Right >= mp.X)
+            && (chrs[i].Top <= mp.Y)
+            && (chrs[i].Bottom >= mp.Y))
+                {
+                    MessageBox.Show("重なった");
+                }
             }
+            
 
         }
         void initProc()

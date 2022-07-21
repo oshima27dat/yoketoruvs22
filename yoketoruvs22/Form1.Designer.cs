@@ -145,7 +145,7 @@ namespace yoketoruvs22
             // 
             this.TempLabel.AutoSize = true;
             this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TempLabel.Location = new System.Drawing.Point(73, 118);
+            this.TempLabel.Location = new System.Drawing.Point(75, 121);
             this.TempLabel.Name = "TempLabel";
             this.TempLabel.Size = new System.Drawing.Size(30, 25);
             this.TempLabel.TabIndex = 10;
