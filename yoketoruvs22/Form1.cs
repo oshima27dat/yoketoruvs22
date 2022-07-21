@@ -187,16 +187,18 @@ namespace yoketoruvs22
                     scorelabel.Visible = false;
                     copyrightlabel.Visible = false;
 
-                    for(int i=EnemyIndex;i<ChrMax;i++)
+                    itemCount = ItemMax;
+                    time = StartTime + 1;
+                    leftlabel.Text = $"★の数:{ itemCount: 00}";
+
+                    for (int i=EnemyIndex;i<ChrMax;i++)
                     {
                         chrs[i].Left = rand.Next(ClientSize.Width - chrs[i].Width);
                         chrs[i].Top = rand.Next(ClientSize.Height - chrs[i].Height);
                         vx[i] = rand.Next(-SpeedMax, SpeedMax + 1);
                         vy[i] = rand.Next(-SpeedMax, SpeedMax + 1);
+                        chrs[i].Visible = true;
                     }
-
-                    itemCount = ItemMax;
-                    time = StartTime+1;
                     break;
 
 
