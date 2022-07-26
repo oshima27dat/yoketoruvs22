@@ -106,11 +106,37 @@ namespace yoketoruvs22
             time--;
             timelabel.Text = $"Time{time:000}";
             Point mp = PointToClient(MousePosition);
-            
 
-            //プレイヤーがマウスの中心になる
-            chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
-            chrs[PlayerIndex].Top = mp.Y - chrs[PlayerIndex].Height / 2;
+            if (Keylabel.Checked == false)
+            {
+                //プレイヤーがマウスの中心になる
+                chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
+                chrs[PlayerIndex].Top = mp.Y - chrs[PlayerIndex].Height / 2;
+            }
+            else
+            {
+                if(GetAsyncKeyState((int)Keys.D)<0)
+                {
+                    chrs[PlayerIndex].Left += 20;
+                }
+                if (GetAsyncKeyState((int)Keys.A) < 0)
+                {
+                    chrs[PlayerIndex].Left -= 20;
+                }
+                if (GetAsyncKeyState((int)Keys.W) < 0)
+                {
+                    chrs[PlayerIndex].Top -= 20;
+                }
+                if (GetAsyncKeyState((int)Keys.S) < 0)
+                {
+                    chrs[PlayerIndex].Top += 20;
+                }
+            }
+
+            if(GetAsyncKeyState((int)Keys.Escape)<0)
+            {
+                nextState = State.Title;
+            }
 
             for (int i = EnemyIndex; i < ChrMax; i++)
             {
@@ -118,7 +144,7 @@ namespace yoketoruvs22
 
                 chrs[i].Left += vx[i];
                 chrs[i].Top += vx[i];
-
+                //反転
                 if (chrs[i].Left < 0)
                 {
                     vx[i] = Math.Abs(vx[i]);
@@ -135,25 +161,53 @@ namespace yoketoruvs22
                 {
                     vy[i] = -Math.Abs(vy[i]);
                 }
-                if ((chrs[i].Left <= mp.X)
-            && (chrs[i].Right >= mp.X)
-            && (chrs[i].Top <= mp.Y)
-            && (chrs[i].Bottom >= mp.Y))
+                //当たり判定
+                if (Keylabel.Checked == false)
                 {
-                    if (i < ItemIndex)
+                    if ((chrs[i].Left <= mp.X)
+                && (chrs[i].Right >= mp.X)
+                && (chrs[i].Top <= mp.Y)
+                && (chrs[i].Bottom >= mp.Y))
                     {
-                        nextState = State.Gameover;
-                    }
-                    else
-                    {
-                        chrs[i].Visible = false;
-                        itemCount--;
-                        leftlabel.Text = $"★の数:{ itemCount: 00}";
-                        if(itemCount <= 0)
+                        if (i < ItemIndex)
                         {
-                            nextState = State.Clear;
+                            nextState = State.Gameover;
                         }
-                        
+                        else
+                        {
+                            chrs[i].Visible = false;
+                            itemCount--;
+                            leftlabel.Text = $"★の数:{itemCount: 00}";
+                            if (itemCount <= 0)
+                            {
+                                nextState = State.Clear;
+                            }
+
+                        }
+                    }
+                }
+                else
+                {
+                    if ((chrs[i].Left <= chrs[PlayerIndex].Left)
+                && (chrs[i].Right >= chrs[PlayerIndex].Left)
+                && (chrs[i].Top <= chrs[PlayerIndex].Top)
+                && (chrs[i].Bottom >= chrs[PlayerIndex].Top))
+                    {
+                        if (i < ItemIndex)
+                        {
+                            nextState = State.Gameover;
+                        }
+                        else
+                        {
+                            chrs[i].Visible = false;
+                            itemCount--;
+                            leftlabel.Text = $"★の数:{itemCount: 00}";
+                            if (itemCount <= 0)
+                            {
+                                nextState = State.Clear;
+                            }
+
+                        }
                     }
                 }
                 if(time <=0 && (nextState == State.None))
@@ -179,6 +233,7 @@ namespace yoketoruvs22
                     gameoverlabel.Visible = false;
                     titlebutton.Visible = false;
                     clearlabel.Visible = false;
+                    Keylabel.Visible = true;
                     break;
 
                 case State.Game:
@@ -186,6 +241,7 @@ namespace yoketoruvs22
                     startbutton.Visible = false;
                     scorelabel.Visible = false;
                     copyrightlabel.Visible = false;
+                    Keylabel.Visible = false;
 
                     itemCount = ItemMax;
                     time = StartTime + 1;
@@ -228,6 +284,11 @@ namespace yoketoruvs22
         private void titlebutton_Click(object sender, EventArgs e)
         {
             nextState = State.Title;
+        }
+
+        private void Keylabel_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

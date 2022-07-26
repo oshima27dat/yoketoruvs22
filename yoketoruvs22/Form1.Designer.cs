@@ -41,6 +41,7 @@ namespace yoketoruvs22
             this.titlebutton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TempLabel = new System.Windows.Forms.Label();
+            this.Keylabel = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // titlelabel
@@ -144,13 +145,24 @@ namespace yoketoruvs22
             // TempLabel
             // 
             this.TempLabel.AutoSize = true;
-            this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TempLabel.Location = new System.Drawing.Point(75, 121);
+            this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TempLabel.Location = new System.Drawing.Point(64, 114);
             this.TempLabel.Name = "TempLabel";
-            this.TempLabel.Size = new System.Drawing.Size(30, 25);
+            this.TempLabel.Size = new System.Drawing.Size(44, 37);
             this.TempLabel.TabIndex = 10;
             this.TempLabel.Text = "★";
             this.TempLabel.Visible = false;
+            // 
+            // Keylabel
+            // 
+            this.Keylabel.AutoSize = true;
+            this.Keylabel.Location = new System.Drawing.Point(502, 367);
+            this.Keylabel.Name = "Keylabel";
+            this.Keylabel.Size = new System.Drawing.Size(99, 32);
+            this.Keylabel.TabIndex = 11;
+            this.Keylabel.Text = "キー操作";
+            this.Keylabel.UseVisualStyleBackColor = true;
+            this.Keylabel.CheckedChanged += new System.EventHandler(this.Keylabel_CheckedChanged);
             // 
             // Form1
             // 
@@ -158,6 +170,7 @@ namespace yoketoruvs22
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.Keylabel);
             this.Controls.Add(this.TempLabel);
             this.Controls.Add(this.titlebutton);
             this.Controls.Add(this.clearlabel);
@@ -169,6 +182,9 @@ namespace yoketoruvs22
             this.Controls.Add(this.copyrightlabel);
             this.Controls.Add(this.titlelabel);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(640, 480);
+            this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "Form1";
             this.Text = "よけとる2022";
             this.ResumeLayout(false);
@@ -189,6 +205,7 @@ namespace yoketoruvs22
         private System.Windows.Forms.Button titlebutton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label TempLabel;
+        private System.Windows.Forms.CheckBox Keylabel;
     }
 }
 
