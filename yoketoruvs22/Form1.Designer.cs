@@ -42,6 +42,7 @@ namespace yoketoruvs22
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TempLabel = new System.Windows.Forms.Label();
             this.Keylabel = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titlelabel
@@ -119,6 +120,7 @@ namespace yoketoruvs22
             // clearlabel
             // 
             this.clearlabel.AutoSize = true;
+            this.clearlabel.BackColor = System.Drawing.Color.Transparent;
             this.clearlabel.Font = new System.Drawing.Font("Yu Gothic UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.clearlabel.ForeColor = System.Drawing.Color.Red;
             this.clearlabel.Location = new System.Drawing.Point(175, 75);
@@ -145,6 +147,7 @@ namespace yoketoruvs22
             // TempLabel
             // 
             this.TempLabel.AutoSize = true;
+            this.TempLabel.BackColor = System.Drawing.Color.White;
             this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TempLabel.Location = new System.Drawing.Point(64, 114);
             this.TempLabel.Name = "TempLabel";
@@ -156,13 +159,22 @@ namespace yoketoruvs22
             // Keylabel
             // 
             this.Keylabel.AutoSize = true;
-            this.Keylabel.Location = new System.Drawing.Point(502, 367);
+            this.Keylabel.Location = new System.Drawing.Point(445, 322);
             this.Keylabel.Name = "Keylabel";
-            this.Keylabel.Size = new System.Drawing.Size(99, 32);
+            this.Keylabel.Size = new System.Drawing.Size(167, 88);
             this.Keylabel.TabIndex = 11;
-            this.Keylabel.Text = "キー操作";
+            this.Keylabel.Text = "キー操作(WASD)\r\n当たり判定が\r\n大きくなります";
             this.Keylabel.UseVisualStyleBackColor = true;
             this.Keylabel.CheckedChanged += new System.EventHandler(this.Keylabel_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(291, 28);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "プレイ時Escapeでタイトルに戻ります";
             // 
             // Form1
             // 
@@ -170,6 +182,7 @@ namespace yoketoruvs22
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Keylabel);
             this.Controls.Add(this.TempLabel);
             this.Controls.Add(this.titlebutton);
@@ -206,6 +219,7 @@ namespace yoketoruvs22
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label TempLabel;
         private System.Windows.Forms.CheckBox Keylabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -117,19 +117,19 @@ namespace yoketoruvs22
             {
                 if(GetAsyncKeyState((int)Keys.D)<0)
                 {
-                    chrs[PlayerIndex].Left += 20;
+                    chrs[PlayerIndex].Left += 30;
                 }
                 if (GetAsyncKeyState((int)Keys.A) < 0)
                 {
-                    chrs[PlayerIndex].Left -= 20;
+                    chrs[PlayerIndex].Left -= 30;
                 }
                 if (GetAsyncKeyState((int)Keys.W) < 0)
                 {
-                    chrs[PlayerIndex].Top -= 20;
+                    chrs[PlayerIndex].Top -= 30;
                 }
                 if (GetAsyncKeyState((int)Keys.S) < 0)
                 {
-                    chrs[PlayerIndex].Top += 20;
+                    chrs[PlayerIndex].Top += 30;
                 }
             }
 
@@ -171,6 +171,7 @@ namespace yoketoruvs22
                     {
                         if (i < ItemIndex)
                         {
+                            if(time <= 090)
                             nextState = State.Gameover;
                         }
                         else
@@ -188,13 +189,14 @@ namespace yoketoruvs22
                 }
                 else
                 {
-                    if ((chrs[i].Left <= chrs[PlayerIndex].Left)
+                    if ((chrs[i].Left <= chrs[PlayerIndex].Right)
                 && (chrs[i].Right >= chrs[PlayerIndex].Left)
-                && (chrs[i].Top <= chrs[PlayerIndex].Top)
+                && (chrs[i].Top <= chrs[PlayerIndex].Bottom)
                 && (chrs[i].Bottom >= chrs[PlayerIndex].Top))
                     {
                         if (i < ItemIndex)
                         {
+                            if (time <= 090)
                             nextState = State.Gameover;
                         }
                         else
@@ -234,6 +236,7 @@ namespace yoketoruvs22
                     titlebutton.Visible = false;
                     clearlabel.Visible = false;
                     Keylabel.Visible = true;
+                    label1.Visible = true;
                     break;
 
                 case State.Game:
@@ -242,6 +245,7 @@ namespace yoketoruvs22
                     scorelabel.Visible = false;
                     copyrightlabel.Visible = false;
                     Keylabel.Visible = false;
+                    label1.Visible = false;
 
                     itemCount = ItemMax;
                     time = StartTime + 1;
