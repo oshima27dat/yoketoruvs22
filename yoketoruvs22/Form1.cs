@@ -181,19 +181,19 @@ namespace yoketoruvs22
                 if (!chrs[i].Visible) continue;
 
                 chrs[i].Left += vx[i];
-                chrs[i].Top += vx[i];
+                chrs[i].Top += vy[i];
                 //反転
                 if (chrs[i].Left < 0)
                 {
                     vx[i] = Math.Abs(vx[i]);
                 }
-                if (chrs[i].Right > ClientSize.Width)
-                {
-                    vx[i] = -Math.Abs(vx[i]);
-                }
                 if (chrs[i].Top < 0)
                 {
                     vy[i] = Math.Abs(vy[i]);
+                }
+                if (chrs[i].Right > ClientSize.Width)
+                {
+                    vx[i] = -Math.Abs(vx[i]);
                 }
                 if (chrs[i].Bottom > ClientSize.Height)
                 {
