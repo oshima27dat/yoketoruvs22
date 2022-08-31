@@ -112,47 +112,63 @@ namespace yoketoruvs22
                 //プレイヤーがマウスの中心になる
                 chrs[PlayerIndex].Left = mp.X - chrs[PlayerIndex].Width / 2;
                 chrs[PlayerIndex].Top = mp.Y - chrs[PlayerIndex].Height / 2;
+                hantei.Left = mp.X - hantei.Width / 2;
+                hantei.Top = mp.Y - hantei.Height / 2;
             }
             else
             {
-                    if (GetAsyncKeyState((int)Keys.D) < 0)
+                if (GetAsyncKeyState((int)Keys.D) < 0)
                     {
-                        if(GetAsyncKeyState((int)Keys.LShiftKey)<0)
+                        if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
                         {
-                        chrs[PlayerIndex].Left += 15;
+                            chrs[PlayerIndex].Left += 15;
+                            hantei.Left += 15;
                         }
                         else
-                        chrs[PlayerIndex].Left += 30;
+                        {
+                            chrs[PlayerIndex].Left += 30;
+                            hantei.Left += 30;
+                        }
                     }
                     if (GetAsyncKeyState((int)Keys.A) < 0)
                     {
                         if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
                         {
                             chrs[PlayerIndex].Left -= 15;
+                            hantei.Left -= 15;
                         }
                         else
-                        chrs[PlayerIndex].Left -= 30;
+                        {
+                            chrs[PlayerIndex].Left -= 30;
+                            hantei.Left -= 30;
+                        }
                     }
                     if (GetAsyncKeyState((int)Keys.W) < 0)
                     {
                         if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
                         {
                             chrs[PlayerIndex].Top -= 15;
+                            hantei.Top -= 15;
                         }
                         else
-                        chrs[PlayerIndex].Top -= 30;
+                        {
+                            chrs[PlayerIndex].Top -= 30;
+                            hantei.Top -= 30;
+                        }
                     }
                     if (GetAsyncKeyState((int)Keys.S) < 0)
                     {
                         if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
                         {
                             chrs[PlayerIndex].Top += 15;
+                            hantei.Top += 15;
                         }
                         else
-                        chrs[PlayerIndex].Top += 30;
+                        {
+                            chrs[PlayerIndex].Top += 30;
+                            hantei.Top += 30;
+                        }
                     }
-                hantei.Left = chrs[PlayerIndex].Width / 2;
-                hantei.Top = chrs[PlayerIndex].Height / 2;
             }
 
             if(GetAsyncKeyState((int)Keys.Escape)<0)
@@ -211,10 +227,10 @@ namespace yoketoruvs22
                 }
                 else
                 {
-                    if ((chrs[i].Left <= chrs[PlayerIndex].Right)
-                && (chrs[i].Right >= chrs[PlayerIndex].Left)
-                && (chrs[i].Top <= chrs[PlayerIndex].Bottom)
-                && (chrs[i].Bottom >= chrs[PlayerIndex].Top))
+                    if ((chrs[i].Left <= hantei.Right)
+                && (chrs[i].Right >= hantei.Left)
+                && (chrs[i].Top <= hantei.Bottom)
+                && (chrs[i].Bottom >= hantei.Top))
                     {
                         if (i < ItemIndex)
                         {

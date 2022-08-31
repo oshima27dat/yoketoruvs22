@@ -51,7 +51,7 @@ namespace yoketoruvs22
             this.titlelabel.AutoSize = true;
             this.titlelabel.BackColor = System.Drawing.Color.Transparent;
             this.titlelabel.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.titlelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.titlelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.titlelabel.Location = new System.Drawing.Point(154, 75);
             this.titlelabel.Name = "titlelabel";
             this.titlelabel.Size = new System.Drawing.Size(310, 71);
@@ -160,11 +160,11 @@ namespace yoketoruvs22
             // Keylabel
             // 
             this.Keylabel.AutoSize = true;
-            this.Keylabel.Location = new System.Drawing.Point(445, 322);
+            this.Keylabel.Location = new System.Drawing.Point(445, 369);
             this.Keylabel.Name = "Keylabel";
-            this.Keylabel.Size = new System.Drawing.Size(167, 88);
+            this.Keylabel.Size = new System.Drawing.Size(167, 32);
             this.Keylabel.TabIndex = 11;
-            this.Keylabel.Text = "キー操作(WASD)\r\n当たり判定が\r\n大きくなります";
+            this.Keylabel.Text = "キー操作(WASD)";
             this.Keylabel.UseVisualStyleBackColor = true;
             this.Keylabel.CheckedChanged += new System.EventHandler(this.Keylabel_CheckedChanged);
             // 
@@ -180,7 +180,8 @@ namespace yoketoruvs22
             // hantei
             // 
             this.hantei.AutoSize = true;
-            this.hantei.Location = new System.Drawing.Point(55, 373);
+            this.hantei.BackColor = System.Drawing.Color.Transparent;
+            this.hantei.Location = new System.Drawing.Point(109, 369);
             this.hantei.Name = "hantei";
             this.hantei.Size = new System.Drawing.Size(22, 28);
             this.hantei.TabIndex = 13;
@@ -193,7 +194,6 @@ namespace yoketoruvs22
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.hantei);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Keylabel);
             this.Controls.Add(this.TempLabel);
@@ -206,6 +206,7 @@ namespace yoketoruvs22
             this.Controls.Add(this.timelabel);
             this.Controls.Add(this.copyrightlabel);
             this.Controls.Add(this.titlelabel);
+            this.Controls.Add(this.hantei);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(640, 480);
