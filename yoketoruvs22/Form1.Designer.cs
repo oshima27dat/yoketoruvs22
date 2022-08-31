@@ -43,13 +43,14 @@ namespace yoketoruvs22
             this.TempLabel = new System.Windows.Forms.Label();
             this.Keylabel = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.hantei = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titlelabel
             // 
             this.titlelabel.AutoSize = true;
-            this.titlelabel.BackColor = System.Drawing.SystemColors.Window;
-            this.titlelabel.Font = new System.Drawing.Font("Yu Gothic UI", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.titlelabel.BackColor = System.Drawing.Color.Transparent;
+            this.titlelabel.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.titlelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.titlelabel.Location = new System.Drawing.Point(154, 75);
             this.titlelabel.Name = "titlelabel";
@@ -147,7 +148,7 @@ namespace yoketoruvs22
             // TempLabel
             // 
             this.TempLabel.AutoSize = true;
-            this.TempLabel.BackColor = System.Drawing.Color.White;
+            this.TempLabel.BackColor = System.Drawing.Color.Transparent;
             this.TempLabel.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TempLabel.Location = new System.Drawing.Point(64, 114);
             this.TempLabel.Name = "TempLabel";
@@ -176,12 +177,23 @@ namespace yoketoruvs22
             this.label1.TabIndex = 12;
             this.label1.Text = "プレイ時Escapeでタイトルに戻ります";
             // 
+            // hantei
+            // 
+            this.hantei.AutoSize = true;
+            this.hantei.Location = new System.Drawing.Point(55, 373);
+            this.hantei.Name = "hantei";
+            this.hantei.Size = new System.Drawing.Size(22, 28);
+            this.hantei.TabIndex = 13;
+            this.hantei.Text = "・";
+            this.hantei.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.hantei);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Keylabel);
             this.Controls.Add(this.TempLabel);
@@ -220,6 +232,7 @@ namespace yoketoruvs22
         private System.Windows.Forms.Label TempLabel;
         private System.Windows.Forms.CheckBox Keylabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label hantei;
     }
 }
 

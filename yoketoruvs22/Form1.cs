@@ -83,7 +83,7 @@ namespace yoketoruvs22
                 initProc();
             }
 
-            if(isDebug)
+            /*if(isDebug)
             {
                 if (GetAsyncKeyState((int)Keys.O) < 0)
                 {
@@ -93,7 +93,7 @@ namespace yoketoruvs22
                 {
                     nextState = State.Clear;
                 }
-            }
+            }*/
             if(currentState == State.Game)
             {
                 UpdateGame();
@@ -115,22 +115,44 @@ namespace yoketoruvs22
             }
             else
             {
-                if(GetAsyncKeyState((int)Keys.D)<0)
-                {
-                    chrs[PlayerIndex].Left += 30;
-                }
-                if (GetAsyncKeyState((int)Keys.A) < 0)
-                {
-                    chrs[PlayerIndex].Left -= 30;
-                }
-                if (GetAsyncKeyState((int)Keys.W) < 0)
-                {
-                    chrs[PlayerIndex].Top -= 30;
-                }
-                if (GetAsyncKeyState((int)Keys.S) < 0)
-                {
-                    chrs[PlayerIndex].Top += 30;
-                }
+                    if (GetAsyncKeyState((int)Keys.D) < 0)
+                    {
+                        if(GetAsyncKeyState((int)Keys.LShiftKey)<0)
+                        {
+                        chrs[PlayerIndex].Left += 15;
+                        }
+                        else
+                        chrs[PlayerIndex].Left += 30;
+                    }
+                    if (GetAsyncKeyState((int)Keys.A) < 0)
+                    {
+                        if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
+                        {
+                            chrs[PlayerIndex].Left -= 15;
+                        }
+                        else
+                        chrs[PlayerIndex].Left -= 30;
+                    }
+                    if (GetAsyncKeyState((int)Keys.W) < 0)
+                    {
+                        if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
+                        {
+                            chrs[PlayerIndex].Top -= 15;
+                        }
+                        else
+                        chrs[PlayerIndex].Top -= 30;
+                    }
+                    if (GetAsyncKeyState((int)Keys.S) < 0)
+                    {
+                        if (GetAsyncKeyState((int)Keys.LShiftKey) < 0)
+                        {
+                            chrs[PlayerIndex].Top += 15;
+                        }
+                        else
+                        chrs[PlayerIndex].Top += 30;
+                    }
+                hantei.Left = chrs[PlayerIndex].Width / 2;
+                hantei.Top = chrs[PlayerIndex].Height / 2;
             }
 
             if(GetAsyncKeyState((int)Keys.Escape)<0)
